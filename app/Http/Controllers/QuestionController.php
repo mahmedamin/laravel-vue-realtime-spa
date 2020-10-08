@@ -33,10 +33,8 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-//        auth()->user()->questions()->create($request->all());
-        $request->merge(['slug' => Str::slug($request->title)]);
-        Question::create($request->all());
-        return response('Created', Response::HTTP_CREATED);
+        $question = auth()->user()->questions()->create($request->all());
+        return response(New QuestionResource($question), Response::HTTP_CREATED);
     }
 
     /**

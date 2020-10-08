@@ -20,12 +20,20 @@
             <v-btn type="submit" color="success">
                 Login
             </v-btn>
+
+            <router-link to="/signup">
+                <v-btn text color="primary">Signup</v-btn>
+            </router-link>
         </v-form>
     </v-container>
 </template>
 
 <script>
     export default {
+        created() {
+            if (User.loggedIn())
+                this.$router.push({name: 'forum'});
+        },
         data() {
             return {
                 form: {
@@ -36,7 +44,9 @@
         },
         methods: {
             login() {
-                User.login(this.form)
+                axios.post('/api/auth/login', this.form)
+                    .then(response => User.responseAfterLogin(response))
+                    .catch(error => console.log('error', error.response))
             }
         }
     }

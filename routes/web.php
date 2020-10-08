@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::any('/{vue?}', function () {
+Route::any('/{vue?}/{any?}', function () {
     return view('home');
 });

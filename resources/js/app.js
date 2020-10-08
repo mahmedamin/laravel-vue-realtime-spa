@@ -11,13 +11,21 @@ window.Vue = require('vue');
 
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+export default new Vuetify({
+    icons: {
+        iconfont: 'mdiSvg',
+    },
+})
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 Vue.use(Vuetify);
+Vue.use(CKEditor);
 
 import User from './helpers/User';
 
 window.User = User;
-User.get();
+
+// window.EventBus = new Vue();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

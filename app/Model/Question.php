@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Question extends Model
 {
@@ -30,7 +31,15 @@ class Question extends Model
 
     public function getPathAttribute()
     {
-        return url("api/questions/$this->slug");
+        return "questions/$this->slug";
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($question) {
+            $question->slug = Str::slug($question->title);
+        });
     }
 
 }

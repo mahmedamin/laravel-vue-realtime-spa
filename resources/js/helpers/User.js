@@ -2,15 +2,12 @@ import Token from './Token';
 import AppStorage from "./AppStorage";
 
 class User {
-    login(data) {
-        axios.post('/api/auth/login', data)
-            .then(response => {
-                const access_token = response.data.access_token;
-                if (Token.isValid(access_token)) {
-                    AppStorage.storeAuth(response.data.user, access_token)
-                }
-            })
-            .catch(error => console.log('error', error.response.data))
+    responseAfterLogin(response) {
+        const access_token = response.data.access_token;
+        if (Token.isValid(access_token)) {
+            AppStorage.storeAuth(response.data.user, access_token)
+            window.location = '/forum';
+        }
     }
 
     loggedIn() {
@@ -20,6 +17,7 @@ class User {
 
     logout() {
         AppStorage.clearAuth();
+        window.location = '/forum';
     }
 
     get() {
@@ -27,7 +25,7 @@ class User {
             const payload = Token.payload(AppStorage.getToken());
             let user = AppStorage.getUser();
             user.id = payload.sub;
-            return console.log('user', user)
+            return user;
         }
         return false;
     }
