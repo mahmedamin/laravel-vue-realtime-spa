@@ -53,9 +53,5 @@ import router from "./router/router";
 const app = new Vue({
     el: '#app',
     router,
-    vuetify: new Vuetify({
-        icons: {
-            iconfont: 'mdiSvg', // 'mdi' || 'md' || 'fa' || 'fa4' || 'faSvg'
-        },
-    })
+    vuetify: new Vuetify()
 });

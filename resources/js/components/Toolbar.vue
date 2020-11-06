@@ -5,12 +5,8 @@
         tile
     >
         <v-toolbar dense>
-            <!--            <v-app-bar-nav-icon></v-app-bar-nav-icon>-->
-
             <v-toolbar-title>Realtime App</v-toolbar-title>
-
             <v-spacer></v-spacer>
-
             <div class="hidden-sm-and-down">
                 <router-link v-for="navigation in navigations" :key="navigation.title" :to="navigation.to"
                              v-if="navigation.visible">
@@ -34,7 +30,7 @@
                 navigations: [
                     {title: "Forum", to: "/forum", visible: true},
                     {title: "Ask Questions", to: "/ask", visible: User.loggedIn()},
-                    {title: "Category", to: "/category", visible: User.loggedIn()},
+                    {title: "Category", to: {name:'create'}, visible: User.loggedIn()},
                     {title: "Login", to: "/login", visible: !User.loggedIn()},
                     {title: "Logout", to: "/logout", visible: User.loggedIn()},
                 ]

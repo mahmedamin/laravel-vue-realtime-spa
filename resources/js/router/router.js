@@ -5,7 +5,9 @@ import Signup from "../components/auth/Signup";
 import Forum from "../components/forum/Forum";
 import Logout from "../components/auth/Logout";
 import Read from "../components/forum/Read";
-import Create from "../components/forum/Create";
+import CreateQuestion from "../components/forum/Create";
+
+import CreateCategory from "../components/category/Create";
 
 Vue.use(VueRouter);
 
@@ -14,8 +16,17 @@ const routes = [
     {path: '/logout', component: Logout},
     {path: '/signup', component: Signup},
     {path: '/forum', component: Forum, name: 'forum'},
-    {path: '/ask', component: Create},
+    {path: '/ask', component: CreateQuestion},
     {path: '/questions/:slug', component: Read, name: 'read-question'},
+    {
+        path: '/categories',
+        component: {
+            render: c => c('router-view'),
+        },
+        children: [
+            {path: 'create', component: CreateCategory, name: 'categories.create'},
+        ]
+    }
 ];
 
 const router = new VueRouter({

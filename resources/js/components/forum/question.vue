@@ -1,7 +1,5 @@
 <template>
-    <v-card
-        class="mx-auto"
-    >
+    <v-card class="mt-2">
         <v-card-title>
             <router-link :to="data.path">
                 {{ data.title }}
@@ -9,12 +7,10 @@
         </v-card-title>
 
         <v-card-subtitle>
-            {{ data.user }} said {{ data.created_at }}
+            {{ data.user.name }} said {{ data.created_at }}
         </v-card-subtitle>
 
-        <v-card-text>
-            {{ data.body }}
-        </v-card-text>
+        <v-card-text v-html="data.body"></v-card-text>
     </v-card>
 </template>
 

@@ -27,7 +27,7 @@
 
 <script>
 import {mdiAccountEdit, mdiDelete} from '@mdi/js'
-import ConfirmationDialog from "../Dialogs/ConfirmationDialog"
+import ConfirmationDialog from "../dialogs/ConfirmationDialog"
 
 export default {
     components: {ConfirmationDialog},
