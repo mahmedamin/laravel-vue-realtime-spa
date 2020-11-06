@@ -1,5 +1,5 @@
-import Token from './Token';
-import AppStorage from "./AppStorage";
+import Token from '../helpers/Token';
+import AppStorage from "../helpers/AppStorage";
 
 class User {
     responseAfterLogin(response) {
