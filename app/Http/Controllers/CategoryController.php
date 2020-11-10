@@ -33,9 +33,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:categories'
+        ]);
         $request->merge(['slug' => Str::slug($request->name)]);
-        Category::create($request->all());
-        return response('Created', Response::HTTP_CREATED);
+        $category = Category::create($request->all());
+        return response(compact('category'), Response::HTTP_CREATED);
     }
 
     /**
@@ -58,10 +61,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $request->validate([
+            'name' => 'required|unique:categories,name,' . $category->id
+        ]);
         if ($request->has('name'))
             $request->merge(['slug' => Str::slug($request->name)]);
         $category->update($request->all());
-        return response('Updated', Response::HTTP_ACCEPTED);
+        return response(compact('category'), Response::HTTP_CREATED);
     }
 
     /**

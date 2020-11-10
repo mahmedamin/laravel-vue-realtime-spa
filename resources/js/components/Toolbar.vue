@@ -30,7 +30,7 @@
                 navigations: [
                     {title: "Forum", to: "/forum", visible: true},
                     {title: "Ask Questions", to: "/ask", visible: User.loggedIn()},
-                    {title: "Category", to: {name:'create'}, visible: User.loggedIn()},
+                    {title: "Category", to: {name:'categories'}, visible: User.loggedIn()},
                     {title: "Login", to: "/login", visible: !User.loggedIn()},
                     {title: "Logout", to: "/logout", visible: User.loggedIn()},
                 ]

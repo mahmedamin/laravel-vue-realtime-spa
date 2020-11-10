@@ -33,6 +33,10 @@ class User {
     own(id) {
         return id == this.get().id
     }
+
+    isAdmin() {
+        // return
+    }
 }
 
 export default User = new User();
