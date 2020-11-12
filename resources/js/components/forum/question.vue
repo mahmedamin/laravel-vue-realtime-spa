@@ -1,5 +1,7 @@
 <template>
-    <v-card class="mt-2">
+    <v-card
+        class="mx-auto"
+    >
         <v-card-title>
             <router-link :to="data.path">
                 {{ data.title }}
