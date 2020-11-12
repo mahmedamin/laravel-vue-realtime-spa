@@ -45,3 +45,19 @@
     overflow: hidden;
     max-height: 0;
 }
+
+
+//:root {
+//    --ck-text-color: #101010 !important;
+//    --ck-color-base-foreground: #121212 !important;
+//    --ck-color-base-border: #000000 !important;
+//    --ck-color-text: #fff !important;
+//    --ck-color-button-default-hover-background: #525252 !important;
+//    --ck-color-button-on-hover-background: #525252 !important;
+//    --ck-color-button-on-background: #525252 !important;
+//    --ck-color-button-default-active-background: #525252 !important;
+//}
+
+.ck-editor {
+    color: var(--ck-text-color);
+}

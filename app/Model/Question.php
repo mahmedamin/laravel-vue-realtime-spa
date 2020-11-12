@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 class Question extends Model
 {
     protected $guarded = ['_token'];
+    protected $with = ['replies'];
 
     public function getRouteKeyName()
     {

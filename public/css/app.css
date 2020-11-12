@@ -23710,3 +23710,7 @@
   max-height: 0;
 }
 
+.ck-editor {
+  color: var(--ck-text-color);
+}
+

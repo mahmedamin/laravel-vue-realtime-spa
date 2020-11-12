@@ -10,7 +10,7 @@
                         {{ question.created_at }}</span>
                 </div>
                 <v-spacer></v-spacer>
-                <v-btn class="teal">5 Replies</v-btn>
+                <v-btn class="teal">{{question.reply_count}} Replies</v-btn>
             </v-card-title>
             <v-card-text v-html="question.body"></v-card-text>
             <v-card-actions v-if="own">

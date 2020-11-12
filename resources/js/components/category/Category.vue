@@ -28,7 +28,7 @@
             <v-list>
                 <transition-group name="slide">
                     <v-list-item
-                        v-bind:class="{highlighted:(currentAction.category && currentAction.category.id)==category.id}"
+                        :class="{highlighted:(currentAction.category && currentAction.category.id)==category.id}"
                         v-if="categories.length"
                         v-for="(category,index) in categories" :key="`k-${index}`">
                         <v-list-item-content>

@@ -18,11 +18,12 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 Vue.use(Vuetify);
 Vue.use(CKEditor);
 
-// export default new Vuetify({
-//     icons: {
-//         iconfont: 'mdi', // default - only for display purposes
-//     },
-// })
+export default new Vuetify({
+    // icons: {
+    //     iconfont: 'mdi', // default - only for display purposes
+    // },
+    theme: {dark: localStorage.getItem('theme') === 'dark'},
+})
 
 import User from './helpers/User';
 

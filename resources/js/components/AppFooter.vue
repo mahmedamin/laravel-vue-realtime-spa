@@ -1,5 +1,5 @@
 <template>
-    <v-footer>
+    <v-footer absolute>
         Realtime App
         <v-spacer></v-spacer>
         <div>&copy; {{ new Date().getFullYear() }}</div>
