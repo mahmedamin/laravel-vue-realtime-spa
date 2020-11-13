@@ -2,16 +2,18 @@
     <div v-if="question">
         <edit v-if="editing" :question=question @clicked="clickHandler"></edit>
         <show-question v-else :question=question @clicked="clickHandler"></show-question>
+        <replies :replies="question.replies"></replies>
     </div>
 </template>
 
 <script>
 import ShowQuestion from "./ShowQuestion";
 import Edit from "./Edit";
+import Replies from "../replies/Replies";
 
 export default {
     name: "Read",
-    components: {Edit, ShowQuestion},
+    components: {Replies, Edit, ShowQuestion},
     data() {
         return {
             question: null,
