@@ -1,7 +1,7 @@
 <template>
-    <v-container>
-        <reply v-for="reply in replies" :key="reply.id" :reply="reply"></reply>
-    </v-container>
+    <div>
+        <reply v-for="reply in replies" :key="reply.id" v-if="replies" :reply="reply"></reply>
+    </div>
 </template>
 
 <script>

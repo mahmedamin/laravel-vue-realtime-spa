@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <toolbar @updateDarkMode="darkModeSwitcher" :is-dark="isDark"></toolbar>
-        <router-view></router-view>
+        <router-view class="mb-7"></router-view>
         <app-footer></app-footer>
     </v-app>
 </template>

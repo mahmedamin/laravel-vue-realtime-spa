@@ -2,7 +2,12 @@
     <div v-if="question">
         <edit v-if="editing" :question=question @clicked="clickHandler"></edit>
         <show-question v-else :question=question @clicked="clickHandler"></show-question>
-        <replies :replies="question.replies"></replies>
+        <v-container>
+            <replies :replies="question.replies"></replies>
+            <create-reply>
+
+            </create-reply>
+        </v-container>
     </div>
 </template>
 
@@ -10,10 +15,11 @@
 import ShowQuestion from "./ShowQuestion";
 import Edit from "./Edit";
 import Replies from "../replies/Replies";
+import CreateReply from "../replies/Create";
 
 export default {
     name: "Read",
-    components: {Replies, Edit, ShowQuestion},
+    components: {CreateReply, Replies, Edit, ShowQuestion},
     data() {
         return {
             question: null,
